@@ -11,7 +11,7 @@ jQuery(function(){
         $('.external-link').unbind('click');    
     });
     //main menu
-    $("#templatemo_banner_menu ul").singlePageNav({offset: $('#templatemo_banner_menu').outerHeight()});
+    $("#banner-menu ul").singlePageNav({offset: $('#banner-menu').outerHeight()});
     //banner slide
     $('.banner').unslider({fluid: true});
     $(window).on("load scroll resize", function(){
@@ -29,21 +29,21 @@ jQuery(function(){
     });
     //about icon
     $(window).on("load scroll resize", function(){
-        about_wap_width = $(".about_icon").width();
+        about_wap_width = $(".about-icon").width();
         about_icon_padding_left = (about_wap_width/100)*30;
         about_icon_width = (about_wap_width/100)*40;
         about_icon_size = (about_icon_width/100)*50;
         about_icon_padding_top = (about_icon_width/100)*25;
-        $(".about_icon .imgwap").css({
+        $(".about-icon .imgwap").css({
                                                     'margin-left': about_icon_padding_left,
                                                     'width': about_icon_width,
                                                     'height': about_icon_width,
                                                     });
-        $("#templatemo_about .about_icon .imgwap i").css({
+        $("#section-about .about-icon .imgwap i").css({
                                                                                     "font-size":about_icon_size,
                                                                                     "padding-top":about_icon_padding_top,
                                                                                   });
-        $(".about_icon p").css({
+        $(".about-icon p").css({
                                             'padding-left': "10%",
                                             'padding-right': "10%",
                                             });
@@ -56,30 +56,15 @@ jQuery(function(){
 	*/
 	
     //about textimonial
-    $.current_testimonial = $("div.testimonial_text").first() ;
-    $("div.testimonial_text").hide();
-    $.current_testimonial.show();
-    $(window).on("load scroll resize", function(){
-        testimonial_child_height = $(".testimonial_text").height();
-        $("#testimonial_text_wap").height(testimonial_child_height);
-        $(".pre_next_wap").height(testimonial_child_height);
-    });
-    $("#prev_testimonial").click(function(){
-        $.current_testimonial.effect("fade",{},200,function(){
-                $.current_testimonial_prev = ($.current_testimonial.index() == 0) ? $(".testimonial_text").last() : $.current_testimonial.prev() ;
-                $.current_testimonial_prev.fadeIn();
-                $.current_testimonial = $.current_testimonial_prev;
-        });
-        return false;
-    });
-    $("#next_testimonial").click(function(){
-        $.current_testimonial.effect("fade",{},200,function(){
-                $.current_testimonial_next = ($.current_testimonial.index() == $(".testimonial_text").last().index() ) ? $(".testimonial_text").first() : $.current_testimonial.next() ;
-                $.current_testimonial_next.fadeIn();
-                $.current_testimonial = $.current_testimonial_next;
-        });
-        return false;
-    });
+    // $.current_testimonial = $("div.testimonial-text").first() ;
+    // $("div.testimonial-text").hide();
+    // $.current_testimonial.show();
+    // $(window).on("load scroll resize", function(){
+    //     testimonial_child_height = $(".testimonial-text").height();
+    //     $("#testimonial-text-wrap").height(testimonial_child_height);
+    // });
+
+
     //event
     $(".event_box_img").load(function(){
         img_height = $(this).height();
@@ -144,8 +129,8 @@ jQuery(function(){
             $(this).removeClass("left_timeline");
             $(this).removeClass("right_timeline");
             if($(window).width()<970){
-                $("#templatemo_timeline .container-fluid").css({"position":"absolute"});
-                positon_left = $("#templatemo_timeline .container-fluid").position().left +100;
+                $("#section-timeline .container-fluid").css({"position":"absolute"});
+                positon_left = $("#section-timeline .container-fluid").position().left +100;
                 //put on right
                 $(this).css({   
                                     'left': 70,
@@ -158,7 +143,7 @@ jQuery(function(){
                 $(this).prepend("<a href=\"#\" class=\"right_timer\"><span class=\"glyphicon glyphicon-time\"></span></a>");
                 $(this).children("a.right_timer").css({left:-86, width: 60 ,});
             }else if($.timeline_left_position_top == 0){
-                $("#templatemo_timeline .container-fluid").css({"position":"relative"});
+                $("#section-timeline .container-fluid").css({"position":"relative"});
                 //put on left
                 $(this).css({   
                                     'left':0,
@@ -171,7 +156,7 @@ jQuery(function(){
                 $(this).prepend("<a href=\"#\" class=\"left_timer\"><span class=\"glyphicon glyphicon-time\"></span></a>");
                 $(this).children("a.left_timer").css({left:$.timeline_item_width-50,});
             }else if( $.timeline_right_position_top < $.timeline_left_position_top ){
-                $("#templatemo_timeline .container-fluid").css({"position":"relative"});
+                $("#section-timeline .container-fluid").css({"position":"relative"});
                 $.timeline_right_position_top = ($.timeline_old_left_position_top + 40) < $.timeline_right_position_top  ? $.timeline_right_position_top : $.timeline_right_position_top + 40;
                 //put on right
                 $(this).css({   
@@ -185,7 +170,7 @@ jQuery(function(){
                 $(this).prepend("<a href=\"#\" class=\"right_timer\"><span class=\"glyphicon glyphicon-time\"></span></a>");
                 $(this).children("a.right_timer").css({left:-99,});
             }else{
-                $("#templatemo_timeline .container-fluid").css({"position":"relative"});
+                $("#section-timeline .container-fluid").css({"position":"relative"});
                 $.timeline_left_position_top = ($.timeline_old_right_position_top + 40) < $.timeline_left_position_top ? $.timeline_left_position_top : $.timeline_left_position_top + 40;
                 //put on left
                 $(this).css({
@@ -201,25 +186,25 @@ jQuery(function(){
             }
             //calculate and define container height
             if($.timeline_left_position_top > $.timeline_right_position_top ){
-                $("#templatemo_timeline .container-fluid").height($.timeline_left_position_top-40);
-                $("#templatemo_timeline").height($.timeline_left_position_top+200);
+                $("#section-timeline .container-fluid").height($.timeline_left_position_top-40);
+                $("#section-timeline").height($.timeline_left_position_top+200);
             }else{
-                $("#templatemo_timeline .container-fluid").height($.timeline_right_position_top-40);
-                $("#templatemo_timeline").height($.timeline_right_position_top+200);
+                $("#section-timeline .container-fluid").height($.timeline_right_position_top-40);
+                $("#section-timeline").height($.timeline_right_position_top+200);
             }
             $(this).fadeIn();
         });
     });
     //mobile menu and desktop menu
-    $("#templatemo_mobile_menu").css({"right":-1500});
-    $("#mobile_menu").click(function(){
-            $("#templatemo_mobile_menu").show();
-            $("#templatemo_mobile_menu").animate({"right":0});
+    $("#mobile-menu").css({"right":-1500});
+    $("#mobile-menu").click(function(){
+            $("#mobile-menu").show();
+            $("#mobile-menu").animate({"right":0});
             return false;
     });
     $(window).on("load resize", function(){
             if($(window).width()>768){
-                $("#templatemo_mobile_menu").css({"right":-1500});
+                $("#mobile-menu").css({"right":-1500});
             }
     });
 
@@ -233,9 +218,9 @@ jQuery(function(){
                 event.preventDefault();
                 var locationHref = window.location.href;
                 var elementClick = $(caller).attr("href");
-                var destination = $(elementClick).offset().top - $('#templatemo_banner_menu').outerHeight() ;
-                $("#templatemo_mobile_menu").animate({"right":-1500});
-                $("#templatemo_mobile_menu").fadeOut() ;
+                var destination = $(elementClick).offset().top - $('#banner-menu').outerHeight() ;
+                $("#mobile-menu").animate({"right":-1500});
+                $("#mobile-menu").fadeOut() ;
                 $("html,body").css({"overflow":"auto"});
                 $("html,body").stop().animate({ scrollTop: destination}, settings.speed, function(){
                     // Detect if pushState is available
@@ -248,34 +233,34 @@ jQuery(function(){
         });
     }
     //animate scroll function calll
-    $("#templatemo_mobile_menu a").anchorAnimate();    
+    $("#mobile-menu a").anchorAnimate();    
     //about
     $(document).scroll(function(){
         document_top = $(document).scrollTop();
-        event_wapper_top = $("#templatemo_about").position().top - $('#templatemo_banner_menu').outerHeight();
+        event_wapper_top = $("#section-about").position().top - $('#banner-menu').outerHeight();
         if(document_top<event_wapper_top){
             degree = (360/event_wapper_top)*(document_top);
             event_animate_num = event_wapper_top - document_top;
             event_animate_alpha = (1/document_top)*(event_wapper_top);
-            $("#templatemo_about .imgwap").css({
+            $("#section-about .imgwap").css({
                         '-webkit-transform': 'rotate(' + degree + 'deg)',
                         '-moz-transform': 'rotate(' + degree + 'deg)',
                         '-ms-transform': 'rotate(' + degree + 'deg)',
                         '-o-transform': 'rotate(' + degree + 'deg)',
                         'transform': 'rotate(' + degree + 'deg)',
             });
-            $("#templatemo_about .about_icon").css({
+            $("#section-about .about-icon").css({
                         'opacity':event_animate_alpha
             });
         }else{
-            $("#templatemo_about .imgwap").css({
+            $("#section-about .imgwap").css({
                         '-webkit-transform': 'rotate(' + 360 + 'deg)',
                         '-moz-transform': 'rotate(' + 360 + 'deg)',
                         '-ms-transform': 'rotate(' + 360 + 'deg)',
                         '-o-transform': 'rotate(' + 360 + 'deg)',
                         'transform': 'rotate(' + 360 + 'deg)',
             });
-            $("#templatemo_about .about_icon").css({
+            $("#section-about .about-icon").css({
                         'opacity':1
             });
         }
@@ -284,15 +269,15 @@ jQuery(function(){
     //event
     $(document).scroll(function(){
         document_top = $(document).scrollTop();
-        event_wapper_top = $("#templatemo_events").position().top - $('#templatemo_banner_menu').outerHeight();
+        event_wapper_top = $("#section-interests").position().top - $('#banner-menu').outerHeight();
         if(document_top<event_wapper_top){
             event_animate_num = event_wapper_top - document_top;
             event_animate_alpha = (1/event_wapper_top)*(document_top);
-            $("#templatemo_events .event_animate_left").css({'left': -event_animate_num,'opacity':event_animate_alpha});
-            $("#templatemo_events .event_animate_right").css({'left':event_animate_num,'opacity':event_animate_alpha});
+            $("#section-interests .event_animate_left").css({'left': -event_animate_num,'opacity':event_animate_alpha});
+            $("#section-interests .event_animate_right").css({'left':event_animate_num,'opacity':event_animate_alpha});
         }else{
-            $("#templatemo_events .event_animate_left").css({'left': 0,'opacity':1});
-            $("#templatemo_events .event_animate_right").css({'left':0,'opacity':1});
+            $("#section-interests .event_animate_left").css({'left': 0,'opacity':1});
+            $("#section-interests .event_animate_right").css({'left':0,'opacity':1});
         }
     }); 
 });
@@ -329,7 +314,7 @@ function initialize(){
         overviewMapControl: false , //hide overviewMapControl
     }
     //adding attribute value
-    map = new google.maps.Map(document.getElementById('templatemo_contact_map'), mapOptions);
+    map = new google.maps.Map(document.getElementById('section-contact-map'), mapOptions);
     var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
     map.mapTypes.set('map_style', styledMap);
     map.setMapTypeId('map_style');

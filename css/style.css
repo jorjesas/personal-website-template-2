@@ -9,7 +9,7 @@ body {
 .container-fluid {
     max-width: 1600px;
 }
-.container_wapper {
+.container-wrapper {
     width: 100%;
     background: #c0c0c0;
 }
@@ -34,7 +34,7 @@ h1 {
 	text-decoration: none;
 }
 /*menu*/
-#templatemo_mobile_menu {
+#mobile-menu {
     top: 0;
     width: 250px;
     height: 100%;
@@ -45,16 +45,16 @@ h1 {
     display: none;
     overflow: auto;
 }
-#templatemo_mobile_menu ul li a {
+#mobile-menu ul li a {
     text-align: left;
     background: #f15556;
     color: #000;
 }
-#templatemo_mobile_menu ul li:hover a {
+#mobile-menu ul li:hover a {
     background: #c83233;
 	color: #fff;
 }
-#templatemo_banner_menu {
+#banner-menu {
     width: 100%;
     background: #f9f9f9;
     height: 94px;
@@ -63,22 +63,22 @@ h1 {
     top: 0;
     z-index: 5000;
 }
-#templatemo_banner_menu #logo_img {
+#banner-menu #logo_img {
     max-height: 90px;
     float: left; 
 }
-#templatemo_banner_menu #logo_text {
+#banner-menu #logo_text {
     font: normal normal normal 36px/1em 'Century Gothic', sans-serif;
     margin-top: 30px;
     padding-left: 60px;
     text-align: left;
     color: #e35354;
 }
-#templatemo_banner_menu #logo_text span {
+#banner-menu #logo_text span {
     color: #9fb038;
 }
-#templatemo_banner_menu ul li a ,
-#templatemo_banner_menu ul li a:focus {
+#banner-menu ul li a ,
+#banner-menu ul li a:focus {
     padding-top: 35px;
     padding-bottom: 35px;
     font: normal normal normal 18px/23px 'Century Gothic', sans-serif;
@@ -86,14 +86,14 @@ h1 {
     background: repeat-x url("../images/banner_bg.jpg") 0 -94px ;
     transition-duration: .5s;
 }
-#templatemo_banner_menu ul li a:hover ,
-#templatemo_banner_menu ul li a.current
+#banner-menu ul li a:hover ,
+#banner-menu ul li a.current
 {
     background-position: 0 0px ;
     background-color: #f15556;
     color: #ffffff;
 }
-#templatemo_banner_menu #mobile_menu {
+#banner-menu #mobile-menu {
     padding-top: 25px;
     font-size: 30px;
     float: right;
@@ -153,106 +153,149 @@ h1 {
     background-size: cover;
 }
 /*about our organization*/
-#templatemo_about {
+#section-about {
     background: #ffffff;
     float: left;
 }
-#templatemo_about .about_icon img {
+#section-about .container-fluid h1{
+    margin-bottom: 0px;
+}
+#section-about .about-interests-container{
+    padding-top: 10px;
+}
+#section-about .about-icon img {
     width: 100%;
 }
-#templatemo_about .about_icon h2 {
+#section-about .about-icon h2 {
     text-align: center;
     font: normal normal normal 20px/25px 'Century Gothic', sans-serif;
 }
-#templatemo_about .about_icon .imgwap {
+#section-about .about-icon .imgwap {
     text-align: center;
     border-radius: 75px;
 }
-#templatemo_about .about_icon p {
+#section-about .about-icon p {
     text-align: center;
     font: normal normal normal 14px/23px 'Century Gothic', sans-serif;
 }
-#templatemo_about .mission {
-    background-color: #bd3e25;
+#section-about .nature {
+    background-color: #E0CE2A;
     color: #f5bd48;
 }
-#templatemo_about .product {
-    background-color: #334d5c;
+#section-about .sports {
+    background-color: #8F1C0C;
     color: #f5bd48;
 }
-#templatemo_about .testimonial {
-    background-color: #efc84a;
+#section-about .astronomy {
+    background-color: #2B2820;
     color: #ab4921;
 }
-#templatemo_about .statistic {
+#section-about .tree {
+    background-color: #226D0F;
+    color: #efc84a;
+}
+#section-about .design {
     background-color: #334d5c;
     color: #efc84a;
 }
-#templatemo_about #testimonial_text_wap {
-    overflow: hidden;
+#section-about .movies {
+    background-color: #471529;
+    color: #efc84a;
 }
-#templatemo_about #testimonial_text_wap h2 {
+#section-about .literature {
+    background-color: #BE4600;
+    color: #efc84a;
+}
+#section-about .people {
+    background-color: #CA0505;
+    color: #efc84a;
+}
+#section-about #testimonial-text-wrap {
+    /* overflow: hidden; */
+    padding-bottom: 30px;
+}
+#section-about #testimonial-text-wrap h2 {
     font-size: 24px;
     margin: 0;
     padding: 12px 0;
 }
-#templatemo_about #testimonial_text_wap h3 {
+#section-about #testimonial-text-wrap h3 {
     font-size: 20px;
     margin: 0;
     padding: 12px 0;
 }
-#templatemo_about #testimonial_text_wap img {
+#section-about .img-profile {
+    display: inline-block;
     margin-bottom: 20px ;
+    width: 100px;
+    height: auto;
+    right: 0;
+    /* position: absolute;
+    top: -150px; */
 }
-#templatemo_about #testimonial_text_wap p {
+
+#section-about #testimonial-text-wrap img {
+    margin-bottom: 20px ;
+    width: 100px;
+    height: auto;
+    right: 0;
+    /* position: absolute;
+    top: -150px; */
+}
+#section-about #testimonial-text-wrap p {
     font-size: 14px;
     line-height: 2em;
 }
-#templatemo_about .testimonial_text {
+#section-about #testimonial-text-wrap hr {
+    height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+#section-about .testimonial-text {
     width: 100%;
     float: left;
 }
-#templatemo_about .pre_next {
+#section-about .pre_next {
     font-size: 70px;
     top: 50%;
     margin-top: -35px;
     position: absolute;
 }
-#templatemo_about .pre_next a {
+#section-about .pre_next a {
     color: #6698b5;
     float: left;
 }
-#templatemo_about .pre_next a:hover {
+#section-about .pre_next a:hover {
     color: #334d5c;
 }
-#templatemo_about #testimonial_text_wap h1 {
+#section-about #testimonial-text-wrap h1 {
     font-size: 70px;
     top: 50%;
     margin-top: -35px;
 }
-#templatemo_about .testimonial_top_bottom_spacer {
+#section-about .testimonial_top_bottom_spacer {
     padding-bottom: 80px;
 }
 /*events*/
-#templatemo_events {
+#section-interests {
     background: #6698b5;
     float: left;
     overflow: hidden;
 }
-#templatemo_events h1{
+#section-interests h1{
     color: #fff;
 }
-#templatemo_events .event_box_wap {
+#section-interests .event_box_wap {
     overflow:hidden;
     margin-bottom: 30px;
     cursor: pointer;
     position: relative;
 }
-#templatemo_events .event_box_wap .event_box_img {
+#section-interests .event_box_wap .event_box_img {
     position: relative;
     top: 0;
 }
-#templatemo_events .event_box_wap .event_box_caption {
+#section-interests .event_box_wap .event_box_caption {
     position: relative;
     top: 0;
     padding-bottom: 10px;
@@ -260,37 +303,37 @@ h1 {
     width: 100%;
     border-top: 3px solid #3c6f8c;
 }
-#templatemo_events .event_box_wap h1,
-#templatemo_events .event_box_wap p {
+#section-interests .event_box_wap h1,
+#section-interests .event_box_wap p {
     margin: 0;
     color: #000000;
     text-align: left;
 }
-#templatemo_events .event_box_wap p {
+#section-interests .event_box_wap p {
     padding: 5px 20px 15px 20px;
 }
-#templatemo_events .event_box_wap h1 {
+#section-interests .event_box_wap h1 {
     padding: 20px 20px 20px 20px;
     font-size: 24px;
     line-height: 24px;
 }
 /*timeline*/
-#templatemo_timeline {
+#section-timeline {
     background: #fff;
     float: left;
 }
-#templatemo_timeline .container-fluid {
+#section-timeline .container-fluid {
     max-width: 1600px;
     position: absolute;
     margin: auto;
     margin-bottom: 80px;
     background: url("../images/time_line_bg.jpg") repeat-y center top;
 }
-#templatemo_timeline .time_line_wap {
+#section-timeline .time_line_wap {
     position: absolute;
     display: none;
 }
-#templatemo_timeline .time_line_caption {
+#section-timeline .time_line_caption {
     background: #f15556;
     padding: 10px 20px 10px 20px ;
     border-radius: 5px;
@@ -298,7 +341,7 @@ h1 {
     clear: both;
     color: #fff; 
 }
-#templatemo_timeline .time_line_paragraph {
+#section-timeline .time_line_paragraph {
     background: #e6e6e6;
     padding: 10px;
     border-radius: 5px;
@@ -306,21 +349,21 @@ h1 {
     margin-top: 50px;
     font-family: 'Century Gothic', sans-serif;
 }
-#templatemo_timeline .time_line_paragraph a {
+#section-timeline .time_line_paragraph a {
     color: #000;
     text-decoration: underline;
 }
-#templatemo_timeline .left_timeline {
+#section-timeline .left_timeline {
     margin-left: 30px;
 }
-#templatemo_timeline .left_timeline .time_line_caption {
+#section-timeline .left_timeline .time_line_caption {
     float: right;
     margin-right: 0px;
 }
-#templatemo_timeline .right_timeline .time_line_caption {
+#section-timeline .right_timeline .time_line_caption {
     float: left;
 }
-#templatemo_timeline .time_line_paragraph h1 {
+#section-timeline .time_line_paragraph h1 {
     text-align: left;
     margin: 0;
     font-size: 24px;
@@ -328,7 +371,7 @@ h1 {
     color: #000;
     padding: 20px 20px 20px 20px;
 }
-#templatemo_timeline .time_line_paragraph p {
+#section-timeline .time_line_paragraph p {
     padding: 0px 20px 20px 20px;
     text-align: left;
     margin: 0;
@@ -336,22 +379,22 @@ h1 {
     line-height: 2em;
     color: #000;
 }
-#templatemo_timeline .left_timer {
+#section-timeline .left_timer {
     float: right;
     background: url("../images/arrow_left.png") 0 5px;
 }
-#templatemo_timeline .right_timer {
+#section-timeline .right_timer {
     float: left;
     background: url("../images/arrow_right.png") 0px 5px;
 }
-#templatemo_timeline .left_timer ,
-#templatemo_timeline .right_timer {
+#section-timeline .left_timer ,
+#section-timeline .right_timer {
     padding-left:30px;
     width: 101px;
     position: absolute;
 }
-#templatemo_timeline .left_timer span,
-#templatemo_timeline .right_timer span {
+#section-timeline .left_timer span,
+#section-timeline .right_timer span {
     border-radius: 20px;
     width: 30px;
     height: 30px;
@@ -363,53 +406,53 @@ h1 {
     margin-top: 3px;
 }
 /*contact*/
-#templatemo_contact {
+#section-contact {
     background: #6698b5;
     float: left;
 }
-#templatemo_contact h1 {
+#section-contact h1 {
     color: #fff;
 }
-#templatemo_contact h2 {
+#section-contact h2 {
     font-size: 24px;
     color: #fff;
     padding-top: 0;
     padding-bottom: 20px;
 }
-#templatemo_contact_map {
+#section-contact_map {
     width: 100%;
     height: 320px;
     float: left;
     margin-bottom: 40px;
 }
-#templatemo_contact ul li a {
+#section-contact ul li a {
     background: none;
 }
-#templatemo_contact ul li a i {
+#section-contact ul li a i {
     width: 60px;
     padding: 20px 0;
     font-size: 32px;
     color: #fff;
     text-align: center;
 }
-#templatemo_contact p {
+#section-contact p {
     color: #fff;
     line-height: 30px;
 	margin-top: 15px;
 }
-#templatemo_contact input {
+#section-contact input {
     width: 100%;
     height: 50px;
     padding: 10px;
     border: none;
 }
-#templatemo_contact textarea {
+#section-contact textarea {
     border: none;
     width: 100%;
     height: 150px;
     padding: 10px;
 }
-#templatemo_contact button {
+#section-contact button {
     width: 100%;
     height: 50px;
     float: left;
@@ -418,7 +461,7 @@ h1 {
     border: none;
     background: #eaeaea;
 }
-#templatemo_contact button:hover {
+#section-contact button:hover {
     background: #f4f4f4;
 }
 /*templatemo_footer*/
@@ -440,25 +483,40 @@ h1 {
 }
 /*  Small devices (tablets, 768px and up)  */
 @media (max-width: 768px ) { 
-    #templatemo_about .pre_next {
+    #section-about .pre_next {
         font-size: 15px;
     }
-    #templatemo_timeline .right_timer {
+    #section-timeline .right_timer {
         background-position: center center;
     }
 }
 /*  Medium devices (desktops, 992px and up)  */
 @media (max-width: 970px ) {
-    #templatemo_timeline .right_timer {
+    #section-timeline .right_timer {
         background-position: 100px 5px;
     }
-    #templatemo_banner_menu #logo_text {
+    #banner-menu #logo_text {
         font: normal normal normal 30px/1em 'Century Gothic', sans-serif;
     }
-    #templatemo_timeline .container-fluid {
+    #section-timeline .container-fluid {
         background: url("../images/time_line_bg.jpg") repeat-y 28px 0;
     }
 }
 /*  Large devices (large desktops, 1200px and up)  */
 @media (min-width: 1200px ) {
+}
+
+/*-----------------*/
+.img-container {
+    overflow: hidden;
+    height: 500px;
+     max-height: 500px;
+     position: relative;
+}
+.img-container > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
 }
