@@ -1,9 +1,4 @@
-/*  Free Template by www.templatemo.com  */
-
-/* 
-Dragonfruit Template 
-http://www.templatemo.com/preview/templatemo_411_dragonfruit 
-*/
+/*  Js DOM */
 
 jQuery(function(){
     $ = jQuery;
@@ -18,14 +13,17 @@ jQuery(function(){
         banner_height = ($(document).width()/1920) * 760;
         $('.banner').height(banner_height);
         $('.banner ul li').height(banner_height);
+        $('.img-container').height(banner_height);
+        $('.img-container').css({"max-height":banner_height});    
+
         if(banner_height > 250){
             caption_margin_top = (banner_height-100)/2;
-            $('.banner .slide_caption:hidden').show();
-            $('.banner .slide_caption').css({"margin-top":caption_margin_top});
+            $('.banner .slide-caption:hidden').show();
+            $('.banner .slide-caption').css({"margin-top":caption_margin_top});
         }else{
-            $('.banner .slide_caption').hide();
+            $('.banner .slide-caption').hide();
         }
-        $("#templatemo_banner_slide > ul > li").css({"background-size":"cover"});
+        //$("#banner-slide > ul > li").css({"background-size":"cover"});
     });
     //about icon
     $(window).on("load scroll resize", function(){
@@ -196,15 +194,15 @@ jQuery(function(){
         });
     });
     //mobile menu and desktop menu
-    $("#mobile-menu").css({"right":-1500});
+    $("#banner-mobile-menu").css({"right":-1500});
     $("#mobile-menu").click(function(){
-            $("#mobile-menu").show();
-            $("#mobile-menu").animate({"right":0});
+            $("#banner-mobile-menu").show();
+            $("#banner-mobile-menu").animate({"right":0});
             return false;
     });
     $(window).on("load resize", function(){
             if($(window).width()>768){
-                $("#mobile-menu").css({"right":-1500});
+                $("#banner-mobile-menu").css({"right":-1500});
             }
     });
 
@@ -219,8 +217,8 @@ jQuery(function(){
                 var locationHref = window.location.href;
                 var elementClick = $(caller).attr("href");
                 var destination = $(elementClick).offset().top - $('#banner-menu').outerHeight() ;
-                $("#mobile-menu").animate({"right":-1500});
-                $("#mobile-menu").fadeOut() ;
+                $("#banner-mobile-menu").animate({"right":-1500});
+                $("#banner-mobile-menu").fadeOut() ;
                 $("html,body").css({"overflow":"auto"});
                 $("html,body").stop().animate({ scrollTop: destination}, settings.speed, function(){
                     // Detect if pushState is available
@@ -233,7 +231,7 @@ jQuery(function(){
         });
     }
     //animate scroll function calll
-    $("#mobile-menu a").anchorAnimate();    
+    $("#banner-mobile-menu a").anchorAnimate();    
     //about
     $(document).scroll(function(){
         document_top = $(document).scrollTop();
