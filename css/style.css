@@ -74,14 +74,14 @@ h1 {
     float: left; 
     width: auto;
 }
-#banner-menu #logo_text {
+#banner-menu #logo-text {
     font: normal normal normal 36px/1em 'Century Gothic', sans-serif;
     margin-top: 10px;
     text-align: left;
     color: #e35354;
     margin-bottom: 0px;
 }
-#banner-menu #logo_text span {
+#banner-menu #logo-text span {
     color: #9fb038;
 }
 #banner-menu ul li a ,
@@ -169,6 +169,9 @@ h1 {
 }
 #section-about .about-interests-container{
     padding-top: 40px;
+}
+#section-about .about-icon {
+    height: 350px;
 }
 #section-about .about-icon img {
     width: 100%;
@@ -515,12 +518,25 @@ h1 {
     text-decoration: underline;
 }
 
+/*  Small devices (tablets, 768px and up)  */
+@media (max-width: 1280px ) { 
+    #logo-subtext {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #banner-menu #logo_img {
+        max-height: 60px;
+    }
+}
+
 /*  Medium devices (desktops, 992px and up)  */
 @media (max-width: 970px ) {
     #section-timeline .right_timer {
         background-position: 100px 5px;
     }
-    #banner-menu #logo_text {
+    #banner-menu #logo-text {
         font: normal normal normal 30px/1em 'Century Gothic', sans-serif;
     }
     #section-timeline .container-fluid {
@@ -544,8 +560,10 @@ h1 {
     }
 }
 
-/*  Large devices (large desktops, 1200px and up)  */
-@media (min-width: 1200px ) {
+@media (max-width: 400px) {
+    #logo-subtext {
+        display: none;
+    }
 }
 
 /*-----------------*/
