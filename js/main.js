@@ -7,24 +7,27 @@ jQuery(function(){
     });
     //main menu
     $("#banner-menu ul").singlePageNav({offset: $('#banner-menu').outerHeight()});
+
     //banner slide
-    $('.banner').unslider({fluid: true});
+    $('.banner').unslider({fluid: true, delay: 6e3});
     $(window).on("load scroll resize", function(){
         banner_height = ($(document).width()/1920) * 760;
         $('.banner').height(banner_height);
         $('.banner ul li').height(banner_height);
-        $('.img-container').height(banner_height);
-        $('.img-container').css({"max-height":banner_height});    
+        // $('.img-container').height(banner_height);
+        // $('.img-container').css({"max-height":banner_height});    
 
         if(banner_height > 250){
             caption_margin_top = (banner_height-100)/2;
-            $('.banner .slide-caption:hidden').show();
+            // $('.banner .slide-caption:hidden').show();
             $('.banner .slide-caption').css({"margin-top":caption_margin_top});
         }else{
-            $('.banner .slide-caption').hide();
+            // $('.banner .slide-caption').hide();
+            $('.banner .slide-caption').css({"margin-top":(($(document).width()/200)*20)});
         }
-        //$("#banner-slide > ul > li").css({"background-size":"cover"});
+        $("#banner-slide > ul > li").css({"background-size":"cover"});
     });
+
     //about icon
     $(window).on("load scroll resize", function(){
         about_wap_width = $(".about-icon").width();
@@ -33,18 +36,18 @@ jQuery(function(){
         about_icon_size = (about_icon_width/100)*50;
         about_icon_padding_top = (about_icon_width/100)*25;
         $(".about-icon .imgwap").css({
-                                                    'margin-left': about_icon_padding_left,
-                                                    'width': about_icon_width,
-                                                    'height': about_icon_width,
-                                                    });
+            'margin-left': about_icon_padding_left,
+            'width': about_icon_width,
+            'height': about_icon_width,
+            });
         $("#section-about .about-icon .imgwap i").css({
-                                                                                    "font-size":about_icon_size,
-                                                                                    "padding-top":about_icon_padding_top,
-                                                                                  });
+            "font-size":about_icon_size,
+            "padding-top":about_icon_padding_top,
+            });
         $(".about-icon p").css({
-                                            'padding-left': "10%",
-                                            'padding-right': "10%",
-                                            });
+            'padding-left': "10%",
+            'padding-right': "10%",
+            });
     });
 	
 	/*
@@ -112,6 +115,7 @@ jQuery(function(){
             $(this).children(".event_box_caption").stop().animate({"top": "-" + hide_paragraph_height + "px"});
         }
     });
+
     //timeline
     $(window).on("load resize", function(){
         $.timeline_right_position_top = 0 ;
@@ -140,6 +144,8 @@ jQuery(function(){
                 $.timeline_right_position_top = $.timeline_right_position_top + $(this).outerHeight() + 40 ;
                 $(this).prepend("<a href=\"#\" class=\"right_timer\"><span class=\"glyphicon glyphicon-time\"></span></a>");
                 $(this).children("a.right_timer").css({left:-86, width: 60 ,});
+
+                $("#section-contact").css({'margin-top': 300/($(window).width())*200});
             }else if($.timeline_left_position_top == 0){
                 $("#section-timeline .container-fluid").css({"position":"relative"});
                 //put on left
@@ -193,6 +199,7 @@ jQuery(function(){
             $(this).fadeIn();
         });
     });
+
     //mobile menu and desktop menu
     $("#banner-mobile-menu").css({"right":-1500});
     $("#mobile-menu").click(function(){
@@ -280,48 +287,48 @@ jQuery(function(){
     }); 
 });
 //google map
-function initialize(){
-    //define map
-    var map;
-    //lat lng
-    myLatlng = new google.maps.LatLng(16.8496189,96.1288854);
-    //define style
-    var styles = [
-        {
-            //set all color
-            featureType: "all",
-            stylers: [{ hue: "#35a9d8" }]
-        },
-        {
-            //hide business
-            featureType: "poi.business",
-            elementType: "labels",
-            stylers: [{ visibility: "off" }]
-        }
-    ];
-    //map options
-    var mapOptions = {
-        zoom: 16,
-        center: myLatlng ,
-        mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']} ,
-        panControl: false , //hide panControl
-        zoomControl: true , //hide zoomControl
-        mapTypeControl: false , //hide mapTypeControl
-        scaleControl: false , //hide scaleControl
-        streetViewControl: false , //hide streetViewControl
-        overviewMapControl: false , //hide overviewMapControl
-    }
-    //adding attribute value
-    map = new google.maps.Map(document.getElementById('section-contact-map'), mapOptions);
-    var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
-    map.mapTypes.set('map_style', styledMap);
-    map.setMapTypeId('map_style');
-    //add marker
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Welcome to Yangon'
-    });
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-google.maps.event.addDomListener(window, 'resize', initialize);
+// function initialize(){
+//     //define map
+//     var map;
+//     //lat lng
+//     myLatlng = new google.maps.LatLng(16.8496189,96.1288854);
+//     //define style
+//     var styles = [
+//         {
+//             //set all color
+//             featureType: "all",
+//             stylers: [{ hue: "#35a9d8" }]
+//         },
+//         {
+//             //hide business
+//             featureType: "poi.business",
+//             elementType: "labels",
+//             stylers: [{ visibility: "off" }]
+//         }
+//     ];
+//     //map options
+//     var mapOptions = {
+//         zoom: 16,
+//         center: myLatlng ,
+//         mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']} ,
+//         panControl: false , //hide panControl
+//         zoomControl: true , //hide zoomControl
+//         mapTypeControl: false , //hide mapTypeControl
+//         scaleControl: false , //hide scaleControl
+//         streetViewControl: false , //hide streetViewControl
+//         overviewMapControl: false , //hide overviewMapControl
+//     }
+//     //adding attribute value
+//     map = new google.maps.Map(document.getElementById('section-contact-map'), mapOptions);
+//     var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+//     map.mapTypes.set('map_style', styledMap);
+//     map.setMapTypeId('map_style');
+//     //add marker
+//     var marker = new google.maps.Marker({
+//         position: myLatlng,
+//         map: map,
+//         title: 'Welcome to Yangon'
+//     });
+// }
+// google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'resize', initialize);
