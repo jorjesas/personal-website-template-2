@@ -310,26 +310,26 @@
             </ul>
         </div>
 
-        <form action="#" method="post" class="contact-form col-md-12">
+        <form id="email-form" action="" method="post" class="contact-form col-md-12">
                 <div class="row">
                     <div class="col-md-6">
                         <p>Name</p>
-                        <input type="text" name="name" id="name" placeholder="Your Name" />
+                        <input type="text" name="name" id="email-form-name" placeholder="Your Name" />
                     </div>
                     <div class="col-md-6">
                         <p>Email</p>
-                        <input type="text" name="email" id="email" placeholder="Your Email" />
+                        <input type="text" name="email" id="email-form-email" placeholder="Your Email" />
                     </div>
                     <div class="col-md-12">
                         <p>Subject</p>
-                        <input type="text" name="subject" id="subject" placeholder="Subject" />
+                        <input type="text" id="email-form-subject" name="subject" placeholder="Subject" />
                     </div>
                     <div class="col-md-12">
                         <p>Message</p>
-                        <textarea name="message" id="message"  placeholder="Write your message here..."></textarea>
+                        <textarea name="message" id="email-form-message" placeholder="Write your message here..."></textarea>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-offset-6">
-                        <button type="submit">Send</button>
+                        <button id="button-send-email" type="submit">Send</button>
                     </div>
                     <div class="col-xs-6 col-sm-3">
                         <button type="reset">Reset</button>
@@ -349,5 +349,6 @@
 <script src="js/jquery.singlePageNav.min.js"></script>
 <script src="js/unslider.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/mail-sender.js"></script>
 </body>
 </html>
