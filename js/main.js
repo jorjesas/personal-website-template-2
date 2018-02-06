@@ -101,7 +101,8 @@ jQuery(function(){
             total_height = $(this).children(".event_box_caption").outerHeight();
             header_height = $(this).children(".event_box_caption").children("h1").outerHeight();
             admin_height = $(this).children(".event_box_caption").children("p").eq(0).outerHeight();
-            paragraph_height = $(this).children(".event_box_caption").children("p").eq(1).outerHeight();
+            var paragraphCount = $(this).children(".event_box_caption").children("p").length > 2 ? $(this).children(".event_box_caption").children("p").length-2 : 1;
+            paragraph_height = $(this).children(".event_box_caption").children("p").eq(1).outerHeight()*paragraphCount;
             hide_paragraph_height = header_height + admin_height + paragraph_height + 10 ;
             $(this).children(".event_box_caption").stop().animate({"top": "-" + hide_paragraph_height + "px"});
         }
